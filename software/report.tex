@@ -1,0 +1,309 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+%    \usepackage{color}                                            %%
+%    \usepackage{array}                                            %%
+%    \usepackage{longtable}                                        %%
+%    \usepackage{calc}                                             %%
+%    \usepackage{multirow}                                         %%
+%    \usepackage{hhline}                                           %%
+%    \usepackage{ifthen}                                           %%
+%optionally (for landscape tables embedded in another document): %%
+%    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+	%language=C,
+	frame=single, 
+	breaklines=true,
+	columns=fullflexible
+}
+%\lstset{
+	%language=tex,
+	%frame=single, 
+	%breaklines=true
+	%}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\newcommand{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand{\comb}[1][-1mu]{\permcomb[#1]{C}}
+
+\begin{document}
+	%
+	
+	
+	\newtheorem{theorem}{Theorem}[section]
+	\newtheorem{problem}{Problem}
+	\newtheorem{proposition}{Proposition}[section]
+	\newtheorem{lemma}{Lemma}[section]
+	\newtheorem{corollary}[theorem]{Corollary}
+	\newtheorem{example}{Example}[section]
+	\newtheorem{definition}[problem]{Definition}
+	%\newtheorem{thm}{Theorem}[section] 
+	%\newtheorem{defn}[thm]{Definition}
+	%\newtheorem{algorithm}{Algorithm}[section]
+	%\newtheorem{cor}{Corollary}
+	\newcommand{\BEQA}{\begin{eqnarray}}
+		\newcommand{\EEQA}{\end{eqnarray}}
+	%	\newcommand{\define}{\stackrel{\triangle}{=}}
+	
+	\bibliographystyle{IEEEtran}
+	%\bibliographystyle{ieeetr}
+	
+	
+	\providecommand{\mbf}{\mathbf}
+	\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+	\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+	\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+	\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+	\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+	\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+	\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+	\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+	\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+	\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+	\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+	\theoremstyle{remark}
+	\newtheorem{rem}{Remark}
+	\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+	\providecommand{\abs}[1]{\left\vert#1\right\vert}
+	\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+	\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+	%\providecommand{\norm}[1]{\lVert#1\rVert}
+	\providecommand{\mtx}[1]{\mathbf{#1}}
+	\providecommand{\mean}[1]{E\left[ #1 \right]}
+	\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+	%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+	\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+	\newcommand{\solution}{\noindent \textbf{Solution: }}
+	\newcommand{\cosec}{\,\text{cosec}\,}
+	\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+	\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+	\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+	%\numberwithin{equation}{section}
+	%\numberwithin{equation}{subsection}
+	%\numberwithin{problem}{section}
+	%\numberwithin{definition}{section}
+	%\makeatletter
+	%\@addtoreset{figure}{problem}
+	%\makeatother
+	
+	%\let\StandardTheFigure\thefigure
+	\let\vec\mathbf
+	%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+	%\renewcommand{\thefigure}{\theproblem}
+	%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+		%\counterwithin{equation}{enumi}
+		
+		
+		%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+		
+		%\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+		%     \def\rightbox#1{\makebox[0in][r]{#1}}
+		%     \def\centbox#1{\makebox[0in]{#1}}
+		%     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+		%     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+		
+		\vspace{3cm}
+		
+		\title{
+			%	\logo{
+				Probability Software Assignment
+				%	}
+		}
+		\author{ Name -:Saksham
+			
+			Roll no -: AI22BTECH11024
+		% <-this % stops a space
+			
+			
+		}	
+		%\title{
+			%	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
+			%}
+		
+		
+		% paper title
+		% can use linebreaks \\ within to get better formatting as desired
+		%\title{Matrix Analysis through Octave}
+		%
+		%
+		% author names and IEEE memberships
+		% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+		% a structure at a ~ so this keeps an author's name from being broken across
+		% two lines.
+		% use \thanks{} to gain access to the first footnote area
+		% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+		% was not built to handle multiple paragraphs
+		%
+		
+		%\author{<-this % stops a space
+			%\thanks{}}
+		%}
+	% note the % following the last \IEEEmembership and also \thanks - 
+	% these prevent an unwanted space from occurring between the last author name
+	% and the end of the author line. i.e., if you had this:
+	% 
+	% \author{....lastname \thanks{...} \thanks{...} }
+	%                     ^------------^------------^----Do not want these spaces!
+	%
+	% a space would be appended to the last name and could cause every name on that
+	% line to be shifted left slightly. This is one of those "LaTeX things". For
+	% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+	% "AB" then you have to do: "\textbf{A}\textbf{B}"
+	% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% * Note that you probably will NOT want to include the author's *
+% * name in the headers of peer review papers.                   *
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% make the title area
+\maketitle
+\section{Introduction}
+The goal of this project was to create a Python program that plays audio files from a specified folder in a random order. The program utilizes the \texttt{pygame} library for audio playback and the \texttt{numpy} library for shuffling the playlist.
+The project created is a Python program that allows you to create and play a playlist of songs. It utilizes the \texttt{pygame} library for audio playback, \texttt{numpy} for generating random numbers, and \texttt{threading} for multi-threading support.
+
+\section{Implementation}
+The program is implemented in Python and consists of the following key components:
+
+\begin{itemize}
+  \item File Selection: The user provides the path to the folder containing the audio files.
+  \item Randomization: The program lists all the audio files in the folder and shuffles them randomly.
+  \item Audio Playback: The \texttt{pygame} library is used to load and play the audio files. 
+\end{itemize}
+
+\section{Usage}
+To use the program, follow these steps:
+\begin{enumerate}
+  \item Run the program in a Python environment (Python 3 or above).
+  \item Provide the path to the folder containing the audio files.
+  \item The program will play the audio files in a random order each time it is run.
+\end{enumerate}
+
+\section{Dependencies}
+The program relies on the following external libraries:
+\begin{itemize}
+  \item \texttt{pygame}: Used for audio playback and volume control.
+  \item \texttt{numpy}: Used for shuffling the playlist.
+  \item \texttt{threading}: Used for multi-threading support.
+\end{itemize}
+
+Ensure that these libraries are installed in the Python environment before running the program.
+
+\section{Conclusion}
+In conclusion, the project allows users to create and play a playlist of songs using Python. It utilizes the \texttt{pygame} library for audio playback, \texttt{numpy} for generating random numbers, and threading for multi-threading support.
+The project creates a playlist by randomly selecting songs from a folder and plays them one by one. It provides options for the user to skip a song or stop the playlist altogether. The program runs in a loop, allowing the user to listen to the playlist again if desired.
+By employing multi-threading, each song is played in a separate thread, enabling the next song to start automatically after the previous one finishes. This ensures a seamless listening experience without interruptions.
+The project demonstrates the usage of key Python modules and concepts, including file handling, threading, user input, and audio playback. It provides a basic framework that can be expanded and customized further to incorporate additional features, such as song metadata, duration display, or user interfaces.
+Overall, this project serves as a starting point for building a simple and interactive playlist application, allowing users to enjoy their favorite songs in a randomized order.
+
+\section*{Output} 
+	Random numbers are generated on the display.
+	\begin{figure}[h]
+		\includegraphics[width=\textwidth]{images/output.png}
+		\caption{output}
+		\label{output}
+	
+	\end{figure}
+ 
+
+\end{document}
+
